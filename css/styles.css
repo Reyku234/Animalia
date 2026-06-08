@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    background-color: #F5F0E8;
+    color: #1A2E28;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+nav {
+    background-color: #2C4A3E;
+    padding: 0 30px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #F5F0E8;
+    font-style: italic;
+}
+
+.nav-logo small {
+    display: block;
+    font-size: 0.7rem;
+    color: #6B9E88;
+    font-style: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-enlaces {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-enlaces a {
+    color: #ccc;
+    font-size: 0.9rem;
+    padding: 6px 14px;
+    border-radius: 5px;
+}
+
+.nav-enlaces a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-enlaces .btn-registro {
+    background-color: #6B9E88;
+    color: #2C4A3E;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* Sección del index */
+.index {
+    background: linear-gradient(135deg, #2C4A3E, #3D6B5A, #6B9E88);
+    color: #F5F0E8;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.index h1 { font-size: 3rem; margin-bottom: 15px; }
+.index p { font-size: 1.1rem; opacity: 0.85; max-width: 500px; margin: 0 auto 25px; }
+
+/* el grid general */
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+
+}
+
+.btn-verde   { background-color: #2C4A3E; color: #F5F0E8; }
+.btn-tierra  { background-color: #8B6F47; color: white; }
+.btn-rojo    { background-color: #e74c3c; color: white; }
+.btn-outline { background-color: transparent; color: #2C4A3E; border: 2px solid #2C4A3E; }
+.btn-pequeño { padding: 5px 12px; font-size: 0.82rem; }
+
+.btn-verde:hover   { background-color: #3D6B5A; }
+.btn-tierra:hover  { background-color: #7a5f3a; }
+.btn-rojo:hover    { background-color: #c0392b; }
+.btn-outline:hover { background-color: #2C4A3E; color: white; }
+
+/* Formularios generales */
+.form-grupo { margin-bottom: 18px; }
+
+.form-grupo label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #5A7068;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #E8E0D0;
+    border-radius: 6px;
+    background-color: #FDFCF9;
+    font-size: 0.95rem;
+    color: #1A2E28;
+    outline: none;
+}
+
+
+.form-grupo textarea { height: 100px; resize: vertical; }
+
+.fila-dos { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+/* Tarjetas de animales */
+.grid-animales {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 25px;
+    margin: 25px 0 40px;
+}
+
+.tarjeta-animal {
+    background-color: #FDFCF9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(44,74,62,0.10);
+    overflow: hidden;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.tarjeta-animal:hover { transform: translateY(-4px); }
+
+.tarjeta-foto {
+    height: 190px;
+    background: linear-gradient(135deg, #D4E8DF, #E8E0D0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5rem;
+}
+
+.tarjeta-cuerpo { padding: 18px; }
+.tarjeta-nombre { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 5px; }
+.tarjeta-meta { font-size: 0.82rem; color: #5A7068; margin-bottom: 10px; }
+
+.tarjeta-desc {
+    font-size: 0.85rem;
+    color: #5A7068;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+}
+
+.tarjeta-pie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #E8E0D0;
+}
+
+/* Cirulitos de estados de animales y solicitudes */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-disponible  { background-color: #D4EDDA; color: #155724; }
+.badge-reservado   { background-color: #FFF3CD; color: #856404; }
+.badge-adoptado    { background-color: #CCE5FF; color: #004085; }
+.badge-tratamiento { background-color: #F8D7DA; color: #721C24; }
+.badge-pendiente   { background-color: #FFF3CD; color: #856404; }
+.badge-en_revision { background-color: #D1ECF1; color: #0C5460; }
+.badge-aprobada    { background-color: #D4EDDA; color: #155724; }
+.badge-rechazada   { background-color: #F8D7DA; color: #721C24; }
+.badge-finalizada  { background-color: #E2E3E5; color: #383D41; }
+
+
+.alerta { padding: 12px 18px; border-radius: 6px; margin-bottom: 18px; font-size: 0.9rem; }
+.alerta-error  { background-color: #F8D7DA; color: #721C24; border-left: 4px solid #C0392B; }
+.alerta-exito  { background-color: #D4EDDA; color: #155724; border-left: 4px solid #27AE60; }
+.alerta-info   { background-color: #D1ECF1; color: #0C5460; border-left: 4px solid #2980B9; }
+
+
+.caja-form {
+    background-color: #FDFCF9;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(44,74,62,0.12);
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.caja-form-grande { max-width: 560px; }
+
+.caja-titulo { text-align: center; 
+    margin-bottom: 25px; }
+.caja-titulo .icono { 
+    font-size: 2.5rem; 
+    margin-bottom: 8px;
+ }
+
+.caja-titulo h1 { 
+    font-size: 1.8rem; 
+    color: #2C4A3E; 
+    margin-bottom: 5px; 
+}
+.caja-titulo p { 
+    color: #5A7068; 
+    font-size: 0.9rem; 
+}
+
+.caja-pie { 
+    text-align: center; 
+    margin-top: 20px; 
+    font-size: 0.88rem; 
+    color: #5A7068; 
+}
+.caja-pie a { 
+    color: #3D6B5A; 
+    font-weight: 600; 
+}
+
+.pagina-centrada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 65px);
+    padding: 30px 20px;
+}
+
+.cabecera-pagina {
+    background-color: #2C4A3E;
+    color: #F5F0E8;
+    padding: 35px 0;
+    margin-bottom: 30px;
+}
+
+.cabecera-pagina h1 { 
+    font-size: 2rem; 
+    margin-bottom: 5px; 
+}
+.cabecera-pagina p { opacity: 0.8; }
+
+
+.filtros {
+    background-color: #FDFCF9;
+    border-radius: 10px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 12px rgba(44,74,62,0.08);
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.filtros .form-grupo { margin: 0; flex: 1; min-width: 130px; }
+
+
+.detalle-animal {
+    background-color: #FDFCF9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(44,74,62,0.10);
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.detalle-foto {
+    height: 280px;
+    background: linear-gradient(135deg, #D4E8DF, #E8E0D0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7rem;
+}
+
+.detalle-cuerpo { padding: 30px; }
+
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 25px;
+    margin: 20px 0;
+    font-size: 0.92rem;
+    color: #5A7068;
+}
+
+.detalle-grid span { font-weight: 600; color: #1A2E28; }
+
+.caja-salud {
+    background-color: #D4E8DF;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    color: #2C4A3E;
+    margin: 15px 0;
+}
+
+
+.tarjeta-solicitud {
+    background-color: #FDFCF9;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(44,74,62,0.08);
+    padding: 20px 22px;
+    margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    gap: 18px;
+    align-items: center;
+}
+
+.sol-emoji {
+    width: 65px;
+    height: 65px;
+    border-radius: 8px;
+    background-color: #D4E8DF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.sol-info h3 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 1.05rem; 
+    margin-bottom: 4px; 
+}
+.sol-info .sol-meta { 
+    font-size: 0.8rem; 
+    color: #5A7068; 
+    margin-bottom: 6px; 
+}
+
+.sol-comentario {
+    font-size: 0.82rem;
+    color: #5A7068;
+    background-color: #F5F0E8;
+    border-left: 3px solid #E8E0D0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+.sol-acciones { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 7px; 
+    min-width: 110px; 
+    align-items: flex-end; 
+}
+
+
+.estadisticas { 
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    margin-bottom: 25px; 
+}
+
+.stat {
+    background-color: #FDFCF9;
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(44,74,62,0.08);
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.stat .numero { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #2C4A3E; }
+.stat .etiqueta { font-size: 0.75rem; color: #5A7068; text-transform: uppercase; letter-spacing: 0.5px; }
+
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FDFCF9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(44,74,62,0.08);
+}
+
+.tabla-admin thead { background-color: #2C4A3E; color: white; }
+.tabla-admin th { padding: 13px 16px; text-align: left; font-size: 0.85rem; }
+.tabla-admin td { padding: 12px 16px; font-size: 0.88rem; border-bottom: 1px solid #E8E0D0; }
+.tabla-admin tbody tr:hover { background-color: #f9f9f7; }
+.tabla-admin tbody tr:last-child td { border-bottom: none; }
+
+
+.modal-fondo {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-fondo.activo { display: flex; }
+
+.modal {
+    background-color: white;
+    border-radius: 10px;
+    padding: 28px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.modal h3 { 
+    color: #2C4A3E; 
+    margin-bottom: 18px; }
+
+.modal-botones { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: flex-end; 
+    margin-top: 10px; }
+
+
+footer {
+    background-color: #2C4A3E;
+    color: #D4E8DF;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-size: 0.85rem;
+}
+
+.separador { border: none; border-top: 1px solid #E8E0D0; margin: 20px 0; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav { padding: 0 15px; }
+    .nav-logo small { display: none; }
+    .index h1 { font-size: 2rem; }
+    .fila-dos { grid-template-columns: 1fr; }
+    .detalle-grid { grid-template-columns: 1fr; }
+    .tarjeta-solicitud { grid-template-columns: 60px 1fr; }
+    .sol-acciones { flex-direction: row; grid-column: 1 / -1; }
+    .tabla-admin th, .tabla-admin td { padding: 8px 10px; }
+}
